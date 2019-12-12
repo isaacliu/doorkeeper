@@ -88,4 +88,16 @@ module Doorkeeper
   def self.authenticate(request, methods = Doorkeeper.configuration.access_token_methods)
     OAuth::Token.authenticate(request, *methods)
   end
+
+  def self.access_token_model
+    @access_token_model ||= Doorkeeper.configuration.access_token_class.constantize
+  end
+
+  def self.access_grant_model
+    @access_grant_model ||= Doorkeeper.configuration.access_grant_class.constantize
+  end
+
+  def self.application_model
+    @application_model ||= Doorkeeper.configuration.application_class.constantize
+  end
 end

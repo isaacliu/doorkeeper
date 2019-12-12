@@ -347,6 +347,15 @@ module Doorkeeper
     option :base_metal_controller,
            default: "ActionController::API"
 
+    option :access_token_class,
+           default: "Doorkeeper::AccessToken"
+
+    option :access_grant_class,
+           default: "Doorkeeper::AccessGrant"
+
+    option :application_class,
+           default: "Doorkeeper::Application"
+
     # Allows to set blank redirect URIs for Applications in case
     # server configured to use URI-less grant flows.
     #
