@@ -57,7 +57,7 @@ module Doorkeeper
             status: auth.status
           )
         else
-          redirect_to auth.redirect_uri
+          redirect_to auth.redirect_uri, allow_other_host: true
         end
       else
         render json: auth.body, status: auth.status
